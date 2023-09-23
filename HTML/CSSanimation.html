@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Animation</title>
+    <style>
+        body {
+            background-color: darksalmon;
+            margin: 0;
+            overflow: hidden;
+        }
+      .box-container {
+        height: 100vh;
+        display: flex; /* make this element a flex container */
+        justify-content: center;
+        align-items: flex-start; /* align items at the start of the cross-axis (top if main axis is horizontal) */
+      }
+      .box {
+        background-color: aquamarine;
+        height: 150px;
+        width: 150px;
+        animation-name: slider;
+        animation-duration: 5s;
+        animation-direction: alternate; /* makes box move back and forth */
+        animation-timing-function: ease-in-out; /*  for smoother acceleration and deceleration */
+        animation-iteration-count: infinite; /* to make animation continuous */
+      }
+      @keyframes slider {
+        0% {background-color: aquamarine; transform: translateY(0)}  /* for initial state */
+        100% {background-color: blueviolet; transform: translateY(50vh)} /* for final state */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Square CSS</h2>
+    <div class="box-container">
+        <div class="box"></div>
+    </div>
+  </body>
+</html>
